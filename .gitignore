@@ -1,0 +1,65 @@
+# Flutter/Dart
+.dart_tool/
+.packages
+build/
+*.dart_tool/
+
+# Generated files
+*.g.dart
+*.freezed.dart
+*.gr.dart
+*.config.dart
+
+# Build outputs
+*.apk
+*.app
+*.ipa
+*.dSYM
+*.xcarchive
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Test coverage
+coverage/
+*.lcov
+
+# Logs
+*.log
+
+# Localization
+*.arb
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*
+fastlane/test_output/**/*
+
+# Xcode
+*.xcuserstate
+*.xccheckout
+*.xcworkspace
+xcuserdata/
+
+# Android
+local.properties
+.gradle/
+captures/
+*.jks
+*.keystore
