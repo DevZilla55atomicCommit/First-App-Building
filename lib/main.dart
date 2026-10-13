@@ -1,11 +1,11 @@
 // Main app entry point
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'core/theme/app_theme.dart';
-import 'core/di/injection.dart';
-import 'core/config/app_config.dart';
-import 'features/home/presentation/views/home_screen.dart';
-import 'shared/widgets/app_widgets.dart';
+import "package:flutter/material.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
+import "core/theme/app_theme.dart";
+import "core/di/injection.dart";
+import "core/config/app_config.dart";
+import "features/home/presentation/views/home_screen.dart";
+import "shared/widgets/app_widgets.dart";
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // Watch app config for environment-specific settings
-    final appConfig = ref.watch(appConfigProvider);
+    var appConfig = ref.watch(appConfigProvider);
     
     return MaterialApp(
       title: AppConstants.appName,
@@ -30,7 +30,7 @@ class MyApp extends ConsumerWidget {
       builder: (context, child) {
         // Add error boundary
         return MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(1.0)),
+          data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1)),
           child: child!,
         );
       },

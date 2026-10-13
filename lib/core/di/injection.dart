@@ -1,20 +1,20 @@
 // Dependency injection setup using Riverpod
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../../config/app_config.dart';
-import '../../network/api_client.dart';
-import '../../utils/local_storage.dart';
-import '../../errors/app_errors.dart';
+import "package:riverpod_annotation/riverpod_annotation.dart";
+import "../../config/app_config.dart";
+import "../../network/api_client.dart";
+import "../../utils/local_storage.dart";
+import "../../errors/app_errors.dart";
 
-part 'injection.g.dart';
+part "injection.g.dart";
 
 @riverpod
 AppConfig appConfig(AppConfigRef ref) {
   // In production, read from environment or flavor
-  const env = String.fromEnvironment('APP_ENV', defaultValue: 'development');
+  const env = String.fromEnvironment("APP_ENV", defaultValue: "development");
   switch (env) {
-    case 'staging':
+    case "staging":
       return AppConfig.staging();
-    case 'production':
+    case "production":
       return AppConfig.production();
     default:
       return AppConfig.development();
@@ -23,7 +23,7 @@ AppConfig appConfig(AppConfigRef ref) {
 
 @riverpod
 ApiClient apiClient(ApiClientRef ref) {
-  final config = ref.watch(appConfigProvider);
+  var config = ref.watch(appConfigProvider);
   return ApiClient(config);
 }
 
